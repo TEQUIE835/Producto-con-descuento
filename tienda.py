@@ -22,8 +22,8 @@ while salir!=True:
     print("")
 
     #Validamos si el producto posee un descuento
-    if des=="Y":
-        desc=int(input("Ingrese el descuento si aplica: "))
+    if des=="Y" or des=="y":
+        desc=int(input("Ingrese el descuento: "))
         print("")
 
 
@@ -66,7 +66,7 @@ while salir!=True:
             print("Hubo un error, intente de nuevo")
 
 
-    elif des=="N":
+    elif des=="N" or des=="n":
 
         #Se valida que el precio y la cantidad sean validos
         if prec>0 and cant>0:

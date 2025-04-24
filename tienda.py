@@ -1,3 +1,7 @@
+#se inicia saludando al usuario
+print("Hola, que producto busca validar el dia de hoy?")
+
+
 
 #Creamos una variable para generar un ciclo y que el programa no se cierre hasta que le digamos
 salir=bool(False)
@@ -97,23 +101,3 @@ while salir!=True:
 
             #Cerramos while
             salir=True
-        #Se valida que el precio y la cantidad sean validos
-        if prec>0 and cant>0:
-
-            #Se saca el total
-            tot=prec*cant
-
-
-            #Se imprime el total
-            print("El precio total de tu producto " + prod+ " es: ", tot)
-            print("")
-
-            #Cerramos while
-            salir=True
-
-
-        elif prec<=0:
-            print("Dijite un precio valido")
-        elif cant<=0:
-            print("Dijite una cantidad valida")
-        else: print("Hubo un error, intente de nuevo")

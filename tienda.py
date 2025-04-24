@@ -11,79 +11,58 @@ salir=bool(False)
 while salir!=True:
 
 #empezamos solicitando la informacion
-    print("")
-    prod=str(input("El nombre de tu producto: "))
+    prod=str(input("\nEl nombre de tu producto: "))
     
     #Utilizamos ciclos while y Try para verificar que la informacion pueda ser aceptada
     
     while True:
         try:
-            print("")
-            prec=float(input("Ingrese el precio unitario: "))
+            prec=float(input("\nIngrese el precio unitario: "))
             if prec >0:
                 break
             else: 
-                print("")
-                print("Ingrese un precio valido")
+                print("\nIngrese un precio valido")
         except: 
-            print("")
-            print("Ingrese un precio valido")
+            print("\nIngrese un precio valido")
     while True:
         try:
-            print("")
-            cant=int(input("Ingrese la cantidad deseada: "))
+            cant=int(input("\nIngrese la cantidad deseada: "))
             if cant >0:
                 break
             else: 
-                print("")
-                print("Ingrese una cantidad valida")
+                print("\nIngrese una cantidad valida")
         except: 
-            print("")
-            print("Ingrese una cantidad valida")
-    print("")
-    des=str(input("Tiene descuento? Y/N "))
+            print("\nIngrese una cantidad valida")
+    des=str(input("\nTiene descuento? Y/N "))
     
 
     #Validamos si el producto posee un descuento
     if des=="Y" or des=="y":
             while True:
                 try:
-                    print("")
-                    desc=int(input("Ingrese el descuento: "))
+                    desc=int(input("\nIngrese el descuento: "))
                     if 100>= desc >0:
                         break
                     else: 
-                        print("")
-                        print("Ingrese un descuento valido")
+                        print("\nIngrese un descuento valido")
                 except: 
-                    print("")
-                    print("Ingrese un descuento valido")
+                    print("\nIngrese un descuento valido")
                 
                 
 
             #Empezamos sacando el precio total sin descuento
             tot=prec*cant
-            print("")
-            print("El precio total de tu producto " + prod+ " sin descuento aplicado es: ", tot)
-            print("")
-
-            #Validamos si el producto cuenta con descuento
-            if desc>0:
-
-                #Sacamos el descuento
-                baj=(tot*desc)/100
-                todesc=tot-baj
-
-                #Mostramos al usuario el precio con descuento
-                print("Su producto " + prod + " Con descuento cuesta: ", todesc)
-
-                #Cerramos el while
-                salir=True
+            print(f"\nEl precio total de tu producto {prod} sin descuento aplicado es: {tot}\n")
 
 
-        #Si el producto no tiene descuento se cierra el ciclo solamente
-            else: 
-                salir=True
+            #Sacamos el descuento
+            baj=(tot*desc)/100
+            todesc=tot-baj
+            #Mostramos al usuario el precio con descuento
+            print(f"Su producto {prod} Con descuento cuesta: {todesc}")
+
+            #Cerramos el while
+            salir=True
 
 
     elif des=="N" or des=="n":
@@ -96,8 +75,7 @@ while salir!=True:
 
 
             #Se imprime el total
-            print("El precio total de tu producto " + prod+ " es: ", tot)
-            print("")
+            print(f"El precio total de tu producto {prod} es: {tot}\n")
 
             #Cerramos while
             salir=True
